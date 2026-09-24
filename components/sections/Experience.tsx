@@ -52,9 +52,20 @@ export function Experience() {
             </Reveal>
             <Reveal delay={0.2}>
               <p className="mt-6 max-w-lg text-lg leading-relaxed text-ink-muted">
-                Café coado na hora, ambiente pensado em cada detalhe e um barbeiro que
-                trata sua imagem como ela já é: uma assinatura.
+                Café quentinho, ambiente pensado em cada detalhe e barbeiros que
+                tratam sua imagem como ela já é: uma assinatura.
               </p>
+            </Reveal>
+            <Reveal delay={0.25} className="mt-8 max-w-lg">
+              <div className="relative aspect-[16/7] overflow-hidden rounded-2xl border border-line">
+                <Image
+                  src="/images/gallery/ambiente-cafe.jpg"
+                  alt="Cantinho do café com cafeteira e garrafas térmicas da MC Barbearia"
+                  fill
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  className={`object-cover ${photoTreatment}`}
+                />
+              </div>
             </Reveal>
           </div>
         </div>

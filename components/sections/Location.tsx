@@ -35,7 +35,7 @@ export function Location() {
       <Container>
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-12">
           <div>
-            <SectionHeading eyebrow="Localização" eyebrowIndex="08" title="Venha nos visitar." />
+            <SectionHeading eyebrow="Localização" eyebrowIndex="09" title="Venha nos visitar." />
 
             <div className="mt-8 space-y-5">
               <Reveal className="flex items-start gap-4">

@@ -2,6 +2,13 @@ import type { GalleryItem } from "@/types/content";
 
 export const galleryItems: GalleryItem[] = [
   {
+    src: "/images/gallery/cliente-na-cadeira.jpg",
+    alt: "Cliente visto de costas na cadeira da MC Barbearia, em frente à bancada",
+    category: "atendimento",
+    width: 1513,
+    height: 2048,
+  },
+  {
     src: "/images/gallery/equipe-dupla.jpg",
     alt: "Marco Macedo e Matheus Araújo analisando ferramentas na barbearia",
     category: "atendimento",

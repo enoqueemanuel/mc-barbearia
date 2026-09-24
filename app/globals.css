@@ -86,3 +86,92 @@
     -ms-overflow-style: none;
   }
 }
+
+.mobile-menu-glass {
+  background-color: rgb(10 10 9 / 55%);
+  -webkit-backdrop-filter: blur(18px) saturate(110%);
+  backdrop-filter: blur(18px) saturate(110%);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .mobile-menu-glass {
+    background-color: rgb(10 10 9 / 90%);
+  }
+}
+
+/* Duas cópias de largura idêntica tornam o letreiro contínuo, sem salto. */
+.testimonials-marquee-viewport {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.testimonials-marquee-viewport::-webkit-scrollbar {
+  display: none;
+}
+.testimonials-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: testimonials-marquee var(--marquee-duration, 72s) linear infinite;
+}
+.testimonials-marquee-group {
+  display: flex;
+  flex-shrink: 0;
+  gap: 1.5rem;
+  padding-right: 1.5rem;
+}
+.testimonials-marquee-card {
+  width: clamp(16rem, 74vw, 21rem);
+  flex-shrink: 0;
+}
+.testimonials-marquee-viewport:focus-within .testimonials-marquee-track {
+  animation-play-state: paused;
+}
+@media (hover: hover) {
+  .testimonials-marquee-viewport:hover .testimonials-marquee-track {
+    animation-play-state: paused;
+  }
+}
+@keyframes testimonials-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .testimonials-marquee-track {
+    animation: none;
+  }
+  .testimonials-marquee-group[aria-hidden="true"] {
+    display: none;
+  }
+}
+
+/* Feedback visual das ações, sem animações contínuas competindo com a leitura. */
+.cta-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 25%, rgb(255 255 255 / 30%) 50%, transparent 75%);
+  transform: translateX(-130%);
+  transition: transform 650ms ease;
+}
+.cta-shine:hover::after,
+.cta-shine:focus-visible::after { transform: translateX(130%); }
+.interactive-card {
+  transition: border-color 300ms ease, background-color 300ms ease, box-shadow 300ms ease;
+}
+.interactive-card:hover,
+.interactive-card:focus-within {
+  border-color: var(--color-accent);
+  background-color: var(--color-panel);
+  box-shadow: inset 0 0 24px rgb(199 220 0 / 5%);
+}
+.service-interaction { transition: transform 300ms ease; }
+@media (hover: hover) {
+  .service-interaction:hover { transform: translateX(5px); }
+}
+section[id] { scroll-margin-top: 6rem; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .cta-shine::after { display: none; }
+  .service-interaction { transition: none; transform: none !important; }
+  .interactive-card { transition: none; }
+}

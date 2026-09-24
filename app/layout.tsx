@@ -10,6 +10,7 @@ import { MobileStickyCta } from "@/components/layout/MobileStickyCta";
 import { Chat } from "@/components/chat/Chat";
 import { Analytics } from "@/components/Analytics";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -86,6 +87,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           Pular para o conteúdo
         </a>
         <ScrollToTop />
+        <ScrollProgress />
         <MotionConfig reducedMotion="user">
           <Header />
           <main id="main-content">{children}</main>

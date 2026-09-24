@@ -3,8 +3,8 @@ import type { Service } from "@/types/content";
 /**
  * Preços e tempos são exemplos (placeholder) para o layout ficar completo.
  * Troque pelos valores reais quando o cliente confirmar a tabela de preços.
- * Os 5 primeiros são os "principais" mostrados na Home; a lista completa
- * fica em /servicos.
+ * A Home destaca os mais procurados e exibe os demais em autorrolagem.
+ * A rota /servicos também mantém a lista para acesso direto.
  */
 export const services: Service[] = [
   {
@@ -13,6 +13,7 @@ export const services: Service[] = [
     description: "Corte com acabamento na navalha, lavagem e finalização.",
     price: "R$ 30–35",
     duration: "40 min",
+    popular: true,
   },
   {
     slug: "barba",
@@ -20,6 +21,7 @@ export const services: Service[] = [
     description: "Modelagem completa com toalha quente e produtos de barbearia.",
     price: "R$ 30–35",
     duration: "30 min",
+    popular: true,
   },
   {
     slug: "corte-barba",
@@ -48,6 +50,7 @@ export const services: Service[] = [
     description: "Limpeza profunda para renovar a pele do rosto.",
     price: "R$ 60",
     duration: "40 min",
+    popular: true,
   },
   {
     slug: "mascara-black",
@@ -79,5 +82,11 @@ export const services: Service[] = [
   },
 ];
 
-/** Os principais, mostrados na Home. */
-export const featuredServices = services.slice(0, 5);
+/**
+ * Principais, mostrados na Home — lidera com os mais procurados (Corte,
+ * Barba, Limpeza de Pele), depois completa com mais 2 para fechar 5.
+ */
+const featuredSlugs = ["corte", "barba", "limpeza-de-pele", "corte-barba", "sobrancelha"];
+export const featuredServices = featuredSlugs
+  .map((slug) => services.find((s) => s.slug === slug))
+  .filter((s): s is Service => s !== undefined);

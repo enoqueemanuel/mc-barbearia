@@ -19,17 +19,19 @@ export function SectionHeading({
   className?: string;
 }) {
   return (
-    <Reveal className={cn("max-w-2xl", align === "center" && "mx-auto text-center", className)}>
+    <div className={cn("max-w-2xl", align === "center" && "mx-auto text-center", className)}>
       {eyebrow && (
-        <div className={cn("flex items-center gap-3", align === "center" && "justify-center")}>
+        <Reveal className={cn("flex items-center gap-3", align === "center" && "justify-center")}>
           <span className="h-px w-10 bg-accent" />
           <SectionLabel index={eyebrowIndex}>{eyebrow}</SectionLabel>
-        </div>
+        </Reveal>
       )}
+      <Reveal delay={0.1}>
       <h2 className="text-balance mt-4 font-display text-display-lg font-semibold text-ink">
         {title}
       </h2>
-      {description && <p className="mt-5 text-lg leading-relaxed text-ink-muted">{description}</p>}
-    </Reveal>
+      </Reveal>
+      {description && <Reveal delay={0.2}><p className="mt-5 text-lg leading-relaxed text-ink-muted">{description}</p></Reveal>}
+    </div>
   );
 }

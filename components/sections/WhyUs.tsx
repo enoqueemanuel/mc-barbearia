@@ -1,7 +1,7 @@
+import Image from "next/image";
 import { differentiators } from "@/data/differentiators";
 import { team } from "@/data/team";
 import { services } from "@/data/services";
-import { getGoogleReviews } from "@/lib/google-reviews";
 import type { Stat } from "@/types/content";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -10,20 +10,11 @@ import { StatNumber } from "@/components/ui/StatNumber";
 import { Reveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/utils";
 
-export async function WhyUs() {
-  const googleReviews = await getGoogleReviews();
-  const hasGoogleStat = !!googleReviews && googleReviews.totalReviews > 0;
-
+export function WhyUs() {
   const stats: Stat[] = [
     { value: String(team.length), label: "profissionais na equipe" },
     { value: String(services.length), label: "serviços oferecidos" },
   ];
-  if (hasGoogleStat) {
-    stats.push({
-      value: googleReviews.rating.toFixed(1).replace(".", ","),
-      label: "nota real no Google",
-    });
-  }
 
   return (
     <section className="bg-panel py-20 sm:py-28 lg:py-32">
@@ -56,13 +47,24 @@ export async function WhyUs() {
           ))}
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-x-12 sm:grid-cols-2">
+        <div className="mt-10 grid items-center gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-12">
+          <Reveal className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-line lg:aspect-[4/3]">
+            <Image
+              src="/images/gallery/bancada-tesouras.jpg"
+              alt="Tesouras profissionais organizadas na bancada da MC Barbearia"
+              fill
+              sizes="(min-width: 1024px) 35vw, 100vw"
+              className="object-cover contrast-105"
+            />
+          </Reveal>
+          <div className="grid grid-cols-1 gap-x-8 sm:grid-cols-2">
           {differentiators.map((item) => (
             <IndexedRow key={item.index} index={item.index}>
               <h3 className="font-display text-lg text-ink">{item.title}</h3>
               <p className="mt-1 text-sm text-ink-muted">{item.description}</p>
             </IndexedRow>
           ))}
+          </div>
         </div>
       </Container>
     </section>

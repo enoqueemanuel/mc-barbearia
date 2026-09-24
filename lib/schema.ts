@@ -1,8 +1,6 @@
 import { siteConfig } from "@/data/site";
-import { getGoogleReviews } from "@/lib/google-reviews";
 
 export async function buildHairSalonSchema() {
-  const reviews = await getGoogleReviews();
   const { latitude, longitude } = siteConfig.geo;
 
   return {
@@ -36,16 +34,5 @@ export async function buildHairSalonSchema() {
       opens: s.opens,
       closes: s.closes,
     })),
-    // Só entra no schema quando a nota vem ao vivo do Google: markup de
-    // avaliação inventado ou desatualizado viola as diretrizes do Google.
-    ...(reviews && reviews.totalReviews > 0
-      ? {
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: reviews.rating,
-            reviewCount: reviews.totalReviews,
-          },
-        }
-      : {}),
   };
 }

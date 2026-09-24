@@ -8,10 +8,11 @@ import { cn } from "@/lib/utils";
 
 export function Plans() {
   return (
-    <section id="planos" className="bg-panel py-28 sm:py-36 lg:py-48">
+    <section id="planos" className="bg-panel py-20 sm:py-28 lg:py-32">
       <Container>
         <SectionHeading
-          eyebrow="Planos"
+          eyebrow="Assinaturas"
+          eyebrowIndex="08"
           title="Seu estilo sempre em dia, todo mês."
           align="center"
           className="mx-auto"
@@ -62,7 +63,7 @@ export function Plans() {
                 size="lg"
                 className="mt-10 w-full"
               >
-                Assinar {plan.name.replace("Plano ", "")}
+                Assinar {plan.name.replace("Assinatura ", "")}
               </Button>
 
               {plan.rules.length > 0 && (

@@ -72,7 +72,7 @@ export function Hero() {
           >
             <span className="h-px w-10 bg-accent" />
             <span className="font-mono text-xs uppercase tracking-[0.3em] text-accent">
-              MC Barbearia — Blumenau, SC
+              MACEDO Barbearia — <span className="whitespace-nowrap">Blumenau, SC</span>
             </span>
           </motion.div>
 
@@ -121,16 +121,16 @@ export function Hero() {
             animate="show"
             variants={fadeUp}
             transition={{ ...premiumTransition, delay: heroDelay(5) }}
-            className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xs uppercase tracking-[0.15em] text-ink-muted"
+            className="mt-12 flex flex-col gap-y-1.5 font-mono text-xs uppercase tracking-[0.15em] text-ink-muted sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-2"
           >
             <span>{siteConfig.hoursShort}</span>
-            <span className="text-line-strong">•</span>
+            <span className="hidden text-line-strong sm:inline" aria-hidden="true">•</span>
             <span>Blumenau • SC</span>
-            <span className="text-line-strong">•</span>
+            <span className="hidden text-line-strong sm:inline" aria-hidden="true">•</span>
             <span>Desde {siteConfig.foundedYear}</span>
             {status && (
               <>
-                <span className="text-line-strong">•</span>
+                <span className="hidden text-line-strong sm:inline" aria-hidden="true">•</span>
                 <span className={status.open ? "text-accent" : "text-ink-muted"}>{status.label}</span>
               </>
             )}

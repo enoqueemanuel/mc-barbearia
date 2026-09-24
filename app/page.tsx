@@ -5,6 +5,7 @@ import { Team } from "@/components/sections/Team";
 import { WhyUs } from "@/components/sections/WhyUs";
 import { Gallery } from "@/components/sections/Gallery";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { Plans } from "@/components/sections/Plans";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { Location } from "@/components/sections/Location";
 
@@ -18,6 +19,7 @@ export default function HomePage() {
       <WhyUs />
       <Gallery />
       <Testimonials />
+      <Plans />
       <FinalCta />
       <Location />
     </>

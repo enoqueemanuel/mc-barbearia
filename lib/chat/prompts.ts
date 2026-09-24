@@ -19,7 +19,7 @@ export function buildSystemPrompt(barbershop: Barbershop): string {
       preco: s.price,
       duracao: s.duration,
     })),
-    planos: barbershop.plans.map((p) => ({
+    assinaturas: barbershop.plans.map((p) => ({
       nome: p.name,
       preco: `${p.price}${p.period}`,
       beneficios: p.benefits,
@@ -29,7 +29,7 @@ export function buildSystemPrompt(barbershop: Barbershop): string {
 
   return `Você é o assistente virtual da MC Barbearia.
 
-Seu trabalho é ajudar clientes com informações sobre serviços, preços, profissionais, planos, horários, localização e agendamento.
+Seu trabalho é ajudar clientes com informações sobre serviços, preços, profissionais, assinaturas, horários, localização e agendamento.
 
 Responda em português brasileiro.
 Seja simpático, direto e informal, mas profissional.

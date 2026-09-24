@@ -31,7 +31,7 @@ export function ChatNudge({ show, onOpen, onDismiss }: { show: boolean; onOpen: 
             <span>
               <span className="block text-sm font-semibold text-ink">Ficou alguma dúvida?</span>
               <span className="mt-0.5 block text-xs leading-relaxed text-ink-muted">
-                Fale com nosso assistente virtual e agende em segundos.
+                Tire suas dúvidas e encontre o link da nossa agenda.
               </span>
             </span>
           </button>

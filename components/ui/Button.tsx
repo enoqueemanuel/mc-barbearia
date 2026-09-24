@@ -37,13 +37,13 @@ const base =
   "group relative isolate inline-flex items-center justify-center gap-2 overflow-hidden whitespace-nowrap rounded-xl font-sans text-sm font-semibold uppercase tracking-[0.08em] transition-[background-color,color,transform] duration-300 ease-premium focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 active:scale-[0.98]";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-accent text-canvas hover:bg-accent-hover",
+  primary: "cta-shine bg-accent text-canvas hover:bg-accent-hover",
   ghost: "border border-line-strong text-ink hover:border-accent",
 };
 
 const sizes: Record<Size, string> = {
-  md: "h-12 px-6",
-  lg: "h-14 px-8 text-base",
+  md: "h-11 px-5 text-xs",
+  lg: "h-12 px-6 text-sm",
 };
 
 function ButtonContent({

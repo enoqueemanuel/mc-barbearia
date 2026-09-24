@@ -1,10 +1,14 @@
-import { featuredServices } from "@/data/services";
+import { services } from "@/data/services";
+import { ServicesCarousel } from "@/components/sections/ServicesCarousel";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ServiceRow } from "@/components/ui/ServiceRow";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { bookingHref } from "@/lib/booking";
+
+const popularServices = services.filter((service) => service.popular);
+const otherServices = services.filter((service) => !service.popular);
 
 export function Services() {
   return (
@@ -17,22 +21,24 @@ export function Services() {
             title="Feito sob medida para o seu estilo."
           />
           <Reveal className="shrink-0">
-            <Button href="/servicos" variant="ghost">
+            <Button href="/#todos-servicos" variant="ghost">
               Ver Todos os Serviços
             </Button>
           </Reveal>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-x-12 md:grid-cols-2">
-          {featuredServices.map((service, i) => (
+        <div className="mt-12 grid grid-cols-1 gap-x-8 md:grid-cols-3">
+          {popularServices.map((service, i) => (
             <ServiceRow key={service.slug} service={service} index={i} />
           ))}
         </div>
 
-        <div className="mt-10">
-          <Button href={bookingHref()} external size="lg">
-            Agendar Agora
-          </Button>
+        <div id="todos-servicos" className="mt-10 scroll-mt-28">
+          <ServicesCarousel services={otherServices} />
+        </div>
+
+        <div className="mt-10 flex justify-end">
+          <Button href={bookingHref()} external size="lg">Consultar agenda</Button>
         </div>
       </Container>
     </section>

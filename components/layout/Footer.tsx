@@ -16,6 +16,9 @@ export function Footer() {
             <p className="font-display text-2xl font-semibold text-ink">
               MC <span className="text-accent">Barbearia</span>
             </p>
+            <p className="mt-1 font-mono text-xs uppercase tracking-[0.15em] text-ink-muted">
+              {siteConfig.legalName}
+            </p>
             <p className="mt-4 max-w-xs text-sm text-ink-muted">{siteConfig.tagline}</p>
             <div className="mt-6 flex items-center gap-4">
               <a

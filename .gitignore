@@ -37,3 +37,6 @@ next-env.d.ts
 
 # projeto anterior (HTML/CSS/JS estático), arquivado e fora de uso
 /_arquivo/
+
+.vercel
+.env*

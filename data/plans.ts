@@ -4,7 +4,7 @@ import type { Plan } from "@/types/content";
 export const plans: Plan[] = [
   {
     slug: "silver",
-    name: "Plano Silver",
+    name: "Assinatura Silver",
     price: "R$ 129",
     period: "/mês",
     description: "Para quem quer manter o corte sempre em dia, sem pensar em agenda.",
@@ -17,7 +17,7 @@ export const plans: Plan[] = [
   },
   {
     slug: "premium",
-    name: "Plano Premium",
+    name: "Assinatura Premium",
     price: "R$ 199",
     period: "/mês",
     description: "A experiência completa da MC, todo mês, sem limites de corte.",

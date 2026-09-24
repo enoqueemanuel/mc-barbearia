@@ -1,29 +1,52 @@
 import type { Testimonial } from "@/types/content";
 
-/**
- * Placeholders claramente identificados. Substituir por depoimentos reais
- * (nome + texto) assim que o cliente enviar. Não usar como texto final.
- */
+// Depoimentos fornecidos pelo responsável pelo site. Atualização manual, sem API.
+// Notas individuais não foram fornecidas. As estrelas do card seguem a referência visual solicitada.
 export const testimonials: Testimonial[] = [
   {
-    name: "Cliente MC (exemplo)",
-    quote: "Escreva aqui o depoimento real de um cliente, nas palavras dele mesmo.",
-    source: "Google",
-    rating: 5,
-    isPlaceholder: true,
+    name: "Edwin Reis Holanda",
+    quote: "Profissionais altamente qualificados. Todo tipo de corte.",
+    source: "Google Maps",
+    authorUrl: "https://www.google.com/maps/contrib/101641720526339807893/reviews?hl=pt-BR",
   },
   {
-    name: "Cliente MC (exemplo)",
-    quote: "Este é um espaço reservado. Substitua pelo texto de uma avaliação real.",
-    source: "Google",
-    rating: 5,
-    isPlaceholder: true,
+    name: "Marco souza",
+    quote: "Corto cabelo a uns 3 anos, o diferencial e que mantém sempre o mesmo padrão de qualidade no corte , e atendimento e ótimo também.",
+    source: "Google Maps",
   },
   {
-    name: "Cliente MC (exemplo)",
-    quote: "Peça para 2 ou 3 clientes autorizarem o uso do depoimento deles aqui.",
-    source: "Google",
-    rating: 5,
-    isPlaceholder: true,
+    name: "Leidson",
+    quote: "Trabalho impecável! Super recomendo!",
+    source: "Google Maps",
+  },
+  {
+    name: "Eduardo Soethe",
+    quote: "Ótimo trabalho da equipe!",
+    source: "Google Maps",
+    authorUrl: "https://www.google.com/maps/contrib/109315119299448683687/reviews?hl=pt-BR",
+  },
+  {
+    name: "Gabriel Montibeler",
+    quote: "Excelente atendimento e ambiente muito bacana",
+    source: "Google Maps",
+    authorUrl: "https://www.google.com/maps/contrib/108126080906827305557/reviews?hl=pt-BR",
+  },
+  {
+    name: "Jeferson Marques",
+    quote: "Recomendo muito bom",
+    source: "Google Maps",
+    authorUrl: "https://www.google.com/maps/contrib/110670978531363876889/reviews?hl=pt-BR",
+  },
+  {
+    name: "José Silva",
+    quote: "Gostei muito, atendimento excelente",
+    source: "Google Maps",
+    authorUrl: "https://www.google.com/maps/contrib/111574440735252477664/reviews?hl=pt-BR",
+  },
+  {
+    name: "Matheus Henrique",
+    quote: "Melhor de Blumenau, só barbeiro com qualidade e bom atendimento, desde 2023 cortando na Macedo.",
+    source: "Google Maps",
+    authorUrl: "https://www.google.com/maps/contrib/103088574091705532101/reviews?hl=pt-BR",
   },
 ];

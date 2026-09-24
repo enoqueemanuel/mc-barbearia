@@ -23,8 +23,8 @@ export function ChatMessages({
   return (
     <div className="flex-1 overflow-y-auto px-4 py-4">
       <div className="flex flex-col gap-4">
-        {messages.map((message) => (
-          <ChatMessage key={message.id} message={message} onSelectAction={onSelectAction} />
+        {messages.map((message, index) => (
+          <ChatMessage key={message.id} message={index === messages.length - 1 && !isTyping ? message : { ...message, quickActions: undefined }} onSelectAction={onSelectAction} />
         ))}
         {isTyping && (
           <div className="flex items-start">

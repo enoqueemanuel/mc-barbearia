@@ -10,6 +10,8 @@ export type Service = {
   /** Texto de exibição, ex. "R$ 50". Placeholder até o valor real ser confirmado. */
   price: string;
   duration: string;
+  /** Um dos serviços mais procurados — ganha destaque visual na lista. */
+  popular?: boolean;
 };
 
 export type TeamMember = {
@@ -41,8 +43,7 @@ export type Testimonial = {
   name: string;
   quote: string;
   source: string;
-  rating: number;
-  isPlaceholder?: boolean;
+  authorUrl?: string;
 };
 
 export type GalleryCategory =

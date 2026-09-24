@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 import { navItems } from "@/data/nav";
@@ -30,12 +31,14 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [open, onClose]);
 
-  return (
+  if (typeof document === "undefined") return null;
+
+  return createPortal(
     <AnimatePresence>
       {open && (
         <motion.div
           ref={containerRef}
-          className="fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-canvas lg:hidden"
+          className="mobile-menu-glass fixed inset-0 z-[80] flex flex-col overflow-y-auto lg:hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -88,6 +91,7 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
           </motion.div>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body,
   );
 }

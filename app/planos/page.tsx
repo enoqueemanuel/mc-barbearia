@@ -5,8 +5,8 @@ import { Container } from "@/components/ui/Container";
 import { Plans } from "@/components/sections/Plans";
 
 export const metadata: Metadata = {
-  title: "Planos",
-  description: "Planos de assinatura da MC Barbearia em Blumenau, SC: Silver e Premium.",
+  title: "Assinaturas",
+  description: "Assinaturas da MC Barbearia em Blumenau, SC: Silver e Premium.",
   alternates: { canonical: "/planos" },
 };
 
@@ -15,7 +15,7 @@ export default function PlanosPage() {
     <div className="bg-canvas pt-40 sm:pt-48">
       <Container>
         <Link
-          href="/"
+          href="/#planos"
           className="inline-flex items-center gap-2 text-sm text-ink-muted transition-colors hover:text-ink"
         >
           <ArrowLeft className="h-4 w-4" aria-hidden="true" />
