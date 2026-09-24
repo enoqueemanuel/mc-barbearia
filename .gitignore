@@ -1,0 +1,39 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# env
+.env*.local
+.env
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# claude code — local machine settings, not shared config
+.claude/settings.local.json
+
+# fotos brutas dos barbeiros (originais em alta, não otimizadas); as
+# versões usadas no site já estão versionadas em public/images/
+/Fotos barbeiros/
+
+# projeto anterior (HTML/CSS/JS estático), arquivado e fora de uso
+/_arquivo/
