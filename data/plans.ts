@@ -1,31 +1,31 @@
 import type { Plan } from "@/types/content";
 
-/** Valores e benefícios são placeholders. Ajustar com os planos reais do cliente. */
+/** Serviços e valores informados pela barbearia. */
 export const plans: Plan[] = [
   {
     slug: "silver",
     name: "Assinatura Silver",
-    price: "R$ 129",
+    price: "R$ 89,90",
     period: "/mês",
     description: "Para quem quer manter o corte sempre em dia, sem pensar em agenda.",
     benefits: [
-      "2 cortes por mês",
-      "10% de desconto em produtos",
-      "Prioridade no agendamento",
+      "Corte de cabelo",
+      "Sobrancelha",
+      "De segunda a quinta-feira",
     ],
     rules: ["Fidelidade mínima de 3 meses", "Cortes não acumulam para o mês seguinte"],
   },
   {
     slug: "premium",
     name: "Assinatura Premium",
-    price: "R$ 199",
+    price: "R$ 129,90",
     period: "/mês",
-    description: "A experiência completa da MC, todo mês, sem limites de corte.",
+    description: "Corte, barba e sobrancelha para cuidar do seu estilo todo mês.",
     benefits: [
-      "Cortes ilimitados",
-      "Barba inclusa em cada visita",
-      "Bebida de cortesia",
-      "Acesso antecipado a promoções",
+      "Corte de cabelo",
+      "Sobrancelha",
+      "Barba",
+      "De segunda a quinta-feira",
     ],
     rules: ["Fidelidade mínima de 3 meses", "Uso pessoal e intransferível"],
     highlighted: true,

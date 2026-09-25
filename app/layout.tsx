@@ -34,10 +34,11 @@ const spaceMono = Space_Mono({
   weight: ["400", "700"],
 });
 
-const titleFull = `${siteConfig.brandName} — Barbearia em Blumenau, SC`;
+const titleFull = "MC Barbearia - Premium";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+  icons: { icon: [{ url: "/brand-logo.svg", type: "image/svg+xml" }] },
   title: {
     default: titleFull,
     template: `%s — ${siteConfig.brandName}`,

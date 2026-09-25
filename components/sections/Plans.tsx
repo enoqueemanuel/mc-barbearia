@@ -1,4 +1,5 @@
 import { plans } from "@/data/plans";
+import { BrandWatermark } from "@/components/ui/BrandWatermark";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
@@ -8,8 +9,9 @@ import { cn } from "@/lib/utils";
 
 export function Plans() {
   return (
-    <section id="planos" className="bg-panel py-20 sm:py-28 lg:py-32">
-      <Container>
+    <section id="planos" className="relative isolate overflow-hidden bg-panel py-20 sm:py-28 lg:py-32">
+      <BrandWatermark />
+      <Container className="relative">
         <SectionHeading
           eyebrow="Assinaturas"
           eyebrowIndex="08"

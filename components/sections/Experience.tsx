@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CoffeeSteam } from "@/components/ui/CoffeeSteam";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Container } from "@/components/ui/Container";
@@ -65,6 +66,7 @@ export function Experience() {
                   sizes="(min-width: 1024px) 40vw, 100vw"
                   className={`object-cover ${photoTreatment}`}
                 />
+                <CoffeeSteam />
               </div>
             </Reveal>
           </div>
