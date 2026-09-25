@@ -1,4 +1,5 @@
 import { navItems } from "@/data/nav";
+import Image from "next/image";
 import { siteConfig } from "@/data/site";
 import { Container } from "@/components/ui/Container";
 import { InstagramGlyph, WhatsAppGlyph } from "@/components/icons/BrandGlyphs";
@@ -13,6 +14,14 @@ export function Footer() {
       <Container className="relative">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr_1fr_1fr]">
           <Reveal>
+            <Image
+              src="/brand-logo.png"
+              alt="Logo MC Macedo, desde 2023"
+              width={512}
+              height={512}
+              sizes="160px"
+              className="mb-5 h-auto w-40 opacity-80 mix-blend-screen"
+            />
             <p className="font-display text-2xl font-semibold text-ink">
               MC <span className="text-accent">Barbearia</span>
             </p>
