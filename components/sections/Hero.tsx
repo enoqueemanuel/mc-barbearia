@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { BrandWatermark } from "@/components/ui/BrandWatermark";
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/Button";
@@ -37,7 +38,7 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative flex min-h-[100svh] items-end overflow-hidden bg-canvas pb-20 pt-32 sm:pb-24 lg:items-center lg:pb-0"
+      className="relative flex min-h-[100svh] items-end overflow-hidden bg-canvas pb-20 pt-32 sm:pb-24 lg:items-center"
     >
       <div className="absolute inset-0">
         <motion.div
@@ -61,7 +62,7 @@ export function Hero() {
         <div className="absolute inset-0 shadow-[inset_0_0_180px_40px_var(--color-canvas)]" />
       </div>
 
-      <Container className="relative z-10">
+      <Container className="relative">
         <div className="max-w-4xl">
           <motion.div
             initial="hidden"
@@ -136,6 +137,7 @@ export function Hero() {
             )}
           </motion.div>
         </div>
+        <BrandWatermark />
       </Container>
 
       <motion.div

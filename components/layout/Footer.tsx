@@ -1,5 +1,4 @@
 import { navItems } from "@/data/nav";
-import { BrandWatermark } from "@/components/ui/BrandWatermark";
 import { siteConfig } from "@/data/site";
 import { Container } from "@/components/ui/Container";
 import { InstagramGlyph, WhatsAppGlyph } from "@/components/icons/BrandGlyphs";
@@ -11,7 +10,6 @@ export function Footer() {
 
   return (
     <footer className="relative isolate overflow-hidden border-t border-line bg-canvas py-16 sm:py-20">
-      <BrandWatermark />
       <Container className="relative">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr_1fr_1fr]">
           <Reveal>
