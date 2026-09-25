@@ -97,9 +97,9 @@ export function Hero() {
             animate="show"
             variants={fadeUp}
             transition={{ ...premiumTransition, delay: heroDelay(3) }}
-            className="mt-7 max-w-md text-lg text-ink-muted"
+            className="mt-7 max-w-lg text-pretty text-lg leading-relaxed text-ink-muted"
           >
-            Mais que um corte. Uma experiência feita para você.
+            {siteConfig.tagline}
           </motion.p>
 
           <motion.div

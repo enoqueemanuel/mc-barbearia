@@ -7,7 +7,7 @@
 export const siteConfig = {
   brandName: "MC Barbearia",
   legalName: "Barbearia Macedo",
-  tagline: "Seu estilo. Nossa assinatura.",
+  tagline: "As máquinas fazem o corte. As pessoas fazem a barbearia.",
   description:
     "Barbearia premium em Blumenau, SC. Corte, barba e cuidado masculino com técnica, ambiente e atendimento de alto nível.",
   url: "https://mcbarbearia.com.br",
