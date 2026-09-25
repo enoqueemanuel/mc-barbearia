@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { BrandWatermark } from "@/components/ui/BrandWatermark";
 import { CoffeeSteam } from "@/components/ui/CoffeeSteam";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
@@ -8,7 +9,8 @@ import { photoTreatment, photoVignetteSoft, photoVignetteStrong } from "@/lib/st
 export function Experience() {
   return (
     <section id="experiencia" className="relative overflow-hidden bg-canvas py-20 sm:py-28 lg:py-32">
-      <Container>
+      <BrandWatermark />
+      <Container className="relative">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
           <div className="relative lg:col-span-5">
             <Reveal className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">

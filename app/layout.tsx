@@ -38,7 +38,6 @@ const titleFull = "MC Barbearia - Premium";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  icons: { icon: [{ url: "/brand-logo.svg", type: "image/svg+xml" }] },
   title: {
     default: titleFull,
     template: `%s — ${siteConfig.brandName}`,
