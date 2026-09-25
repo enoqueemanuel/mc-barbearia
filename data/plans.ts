@@ -13,7 +13,7 @@ export const plans: Plan[] = [
       "Sobrancelha",
       "De segunda a quinta-feira",
     ],
-    rules: ["Fidelidade mínima de 3 meses", "Cortes não acumulam para o mês seguinte"],
+    rules: ["Uso pessoal e intransferível"],
   },
   {
     slug: "premium",
@@ -27,7 +27,7 @@ export const plans: Plan[] = [
       "Barba",
       "De segunda a quinta-feira",
     ],
-    rules: ["Fidelidade mínima de 3 meses", "Uso pessoal e intransferível"],
+    rules: ["Uso pessoal e intransferível"],
     highlighted: true,
   },
 ];
