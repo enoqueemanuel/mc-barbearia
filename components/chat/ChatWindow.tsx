@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChatHeader } from "@/components/chat/ChatHeader";
 import { ChatMessages } from "@/components/chat/ChatMessages";
@@ -43,7 +44,12 @@ export function ChatWindow({ open, onClose }: { open: boolean; onClose: () => vo
           className="fixed inset-x-0 bottom-0 z-[70] flex h-[88dvh] flex-col overflow-hidden rounded-t-2xl border border-line-strong bg-canvas shadow-[0_20px_60px_rgba(0,0,0,0.6)] sm:inset-x-auto sm:bottom-24 sm:right-6 sm:h-[600px] sm:max-h-[75dvh] sm:w-[400px] sm:rounded-2xl"
         >
           <ChatHeader onClose={onClose} onReset={resetConversation} />
-          <ChatMessages messages={messages} isTyping={isTyping} onSelectAction={handleSelectAction} />
+          <div className="relative isolate flex min-h-0 flex-1 flex-col">
+            <div aria-hidden="true" className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden select-none">
+              <Image src="/brand-logo.png" alt="" width={512} height={512} sizes="220px" className="h-auto w-[55%] max-w-[220px] opacity-[0.12] mix-blend-screen" />
+            </div>
+            <ChatMessages messages={messages} isTyping={isTyping} onSelectAction={handleSelectAction} />
+          </div>
           <ChatInput disabled={isTyping} onSend={sendUserMessage} />
         </motion.div>
       )}
