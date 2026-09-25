@@ -67,7 +67,7 @@ export function Plans() {
               </Button>
 
               {plan.rules.length > 0 && (
-                <p className="mt-4 text-xs text-ink-muted">{plan.rules.join(" · ")}</p>
+                <p className="mt-4 text-center text-xs text-ink-muted">{plan.rules.join(" · ")}</p>
               )}
             </Reveal>
           ))}
