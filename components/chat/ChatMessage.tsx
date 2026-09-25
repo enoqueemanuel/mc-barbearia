@@ -24,7 +24,7 @@ export function ChatMessage({
     >
       <div
         className={cn(
-          "max-w-[85%] whitespace-pre-line rounded-xl px-4 py-3 text-sm leading-relaxed",
+          "max-w-[85%] whitespace-pre-line break-words rounded-xl px-4 py-3 text-sm leading-relaxed",
           isUser ? "bg-accent text-canvas" : "border border-line-strong bg-panel text-ink",
         )}
       >

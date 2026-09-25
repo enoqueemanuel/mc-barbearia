@@ -22,7 +22,7 @@ export function ChatMessages({
 
   return (
     <div className="relative z-10 min-h-0 flex-1 overflow-y-auto px-4 py-4">
-      <div className="flex flex-col gap-4">
+      <div role="log" aria-live="polite" aria-relevant="additions" aria-label="Conversa com o assistente" className="flex flex-col gap-4">
         {messages.map((message, index) => (
           <ChatMessage key={message.id} message={index === messages.length - 1 && !isTyping ? message : { ...message, quickActions: undefined }} onSelectAction={onSelectAction} />
         ))}

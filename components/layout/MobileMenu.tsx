@@ -38,7 +38,7 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
       {open && (
         <motion.div
           ref={containerRef}
-          className="mobile-menu-glass fixed inset-0 z-[80] flex flex-col overflow-y-auto lg:hidden"
+          className="mobile-menu-glass fixed inset-0 z-[80] flex flex-col overflow-y-auto xl:hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

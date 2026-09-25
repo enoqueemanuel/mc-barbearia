@@ -204,6 +204,7 @@
 section[id] { scroll-margin-top: 6rem; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .animate-bounce { animation: none; }
   .cta-shine::after { display: none; }
   .service-interaction { transition: none; transform: none !important; }
   .interactive-card { transition: none; }

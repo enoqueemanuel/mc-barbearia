@@ -48,7 +48,7 @@ export function Header() {
             MACEDO <span className="text-accent">Barbearia</span>
           </Link>
 
-          <nav className="hidden items-center gap-8 lg:flex">
+          <nav className="hidden items-center gap-8 xl:flex">
             {navItems.map((item) => (
               <a
                 key={item.href}
@@ -62,7 +62,7 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="hidden lg:block">
+          <div className="hidden xl:block">
             <Button href={bookingHref()} external>
               Agendar Horário
             </Button>
@@ -72,7 +72,8 @@ export function Header() {
             type="button"
             onClick={() => setMenuOpen(true)}
             aria-label="Abrir menu"
-            className="flex h-11 w-11 items-center justify-center text-ink lg:hidden"
+            aria-expanded={menuOpen}
+            className="flex h-11 w-11 items-center justify-center text-ink xl:hidden"
           >
             <Menu size={24} />
           </button>

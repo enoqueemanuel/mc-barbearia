@@ -129,7 +129,7 @@ export function Hero() {
             <span>Blumenau • SC</span>
             <span className="hidden text-line-strong sm:inline" aria-hidden="true">•</span>
             <span>Desde {siteConfig.foundedYear}</span>
-            {status && (
+            {status && !siteConfig.hoursIsPlaceholder && (
               <>
                 <span className="hidden text-line-strong sm:inline" aria-hidden="true">•</span>
                 <span className={status.open ? "text-accent" : "text-ink-muted"}>{status.label}</span>

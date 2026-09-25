@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { InstagramGlyph } from "@/components/icons/BrandGlyphs";
-import { whatsappHref } from "@/lib/whatsapp";
+import { bookingHref } from "@/lib/booking";
 import { photoTreatment, photoVignetteSoft } from "@/lib/styles";
 
 function TeamCard({ member, delay }: { member: TeamMember; delay: number }) {
@@ -31,7 +31,7 @@ function TeamCard({ member, delay }: { member: TeamMember; delay: number }) {
 
         <div className="mt-5 flex items-center justify-center gap-4">
           <Button
-            href={whatsappHref(`Olá! Quero agendar um horário com ${member.shortName}.`)}
+            href={bookingHref()}
             external
             variant="ghost"
           >

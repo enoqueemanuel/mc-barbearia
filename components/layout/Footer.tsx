@@ -71,7 +71,7 @@ export function Footer() {
           <Reveal delay={0.16}>
             <p className="font-mono text-xs uppercase tracking-[0.25em] text-ink-muted">Contato</p>
             <ul className="mt-5 space-y-3 text-sm text-ink-muted">
-              <li>{siteConfig.phoneDisplay}</li>
+              <li><a href={`tel:+${siteConfig.whatsappNumber}`} className="transition-colors hover:text-ink">{siteConfig.phoneDisplay}</a></li>
               <li>{siteConfig.address.full}</li>
               <li>{siteConfig.social.instagramHandle}</li>
             </ul>

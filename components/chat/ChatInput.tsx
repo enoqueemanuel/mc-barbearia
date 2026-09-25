@@ -36,7 +36,7 @@ export function ChatInput({
         placeholder="Escreva sua mensagem..."
         aria-label="Mensagem para o assistente da MC Barbearia"
         maxLength={MAX_LENGTH}
-        className="h-11 flex-1 rounded-xl border border-line-strong bg-canvas px-3 text-sm text-ink placeholder:text-ink-muted focus-visible:border-accent focus-visible:outline-none"
+        className="h-11 min-w-0 flex-1 rounded-xl border border-line-strong bg-canvas px-3 text-base sm:text-sm text-ink placeholder:text-ink-muted focus-visible:border-accent focus-visible:outline-none"
       />
       <button
         type="button"

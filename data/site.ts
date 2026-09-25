@@ -10,7 +10,7 @@ export const siteConfig = {
   tagline: "As máquinas fazem o corte. As pessoas fazem a barbearia.",
   description:
     "Barbearia premium em Blumenau, SC. Corte, barba e cuidado masculino com técnica, ambiente e atendimento de alto nível.",
-  url: "https://mcbarbearia.com.br",
+  url: "https://mc-barbearia.vercel.app",
 
   phoneDisplay: "(47) 98462-7509",
   /** Sobrescrevível via NEXT_PUBLIC_WHATSAPP_NUMBER (só dígitos, com DDI 55). */
@@ -47,8 +47,7 @@ export const siteConfig = {
     longitude: null as number | null,
   },
 
-  /** Caminho de um logo real (SVG/PNG) para o JSON-LD. Ainda não recebido. */
-  logoUrl: null as string | null,
+  logoUrl: "https://mc-barbearia.vercel.app/brand-logo.png",
 
   social: {
     instagram: "https://www.instagram.com/barbeariamacedo.m/",
@@ -86,8 +85,12 @@ export const siteConfig = {
 };
 
 export function isOpenNow(date: Date = new Date()): { open: boolean; label: string } {
-  const day = date.getDay(); // 0 = domingo
-  const minutes = date.getHours() * 60 + date.getMinutes();
+  const local = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/Sao_Paulo", weekday: "short", hour: "2-digit", minute: "2-digit", hourCycle: "h23",
+  }).formatToParts(date);
+  const part = (type: string) => local.find((value) => value.type === type)?.value ?? "";
+  const day = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].indexOf(part("weekday"));
+  const minutes = Number(part("hour")) * 60 + Number(part("minute"));
 
   if (day === 0) return { open: false, label: "Fechado hoje — abre segunda às 09:00" };
 
@@ -96,6 +99,6 @@ export function isOpenNow(date: Date = new Date()): { open: boolean; label: stri
   const closes = isSaturday ? 18 * 60 : 20 * 60;
 
   if (minutes < opens) return { open: false, label: `Abre hoje às 09:00` };
-  if (minutes >= closes) return { open: false, label: `Fechado — abre amanhã às 09:00` };
+  if (minutes >= closes) return { open: false, label: isSaturday ? "Fechado — abre segunda às 09:00" : "Fechado — abre amanhã às 09:00" };
   return { open: true, label: `Aberto agora — fecha às ${isSaturday ? "18:00" : "20:00"}` };
 }

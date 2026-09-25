@@ -76,7 +76,9 @@ export function conversationReply(raw: string, history: ChatApiMessage[] = []): 
   const priorPlan = barbershop.plans.find((p) => normalize(lastAssistant).includes(normalize(p.name)));
   if (has(text, /\b(plano|planos|assinatura|assinaturas|mensalidade|silver|premium)\b/) ||
       (!explicitService && priorPlan && has(text, /\b(quanto|preco|valor|inclui|beneficio|beneficios|fidelidade|regras)\b/))) {
-    const plan = barbershop.plans.find((p) => text.includes(p.slug)) ??
+    const namedPlans = barbershop.plans.filter((p) => text.includes(p.slug));
+    const generalQuestion = has(text, /\b(planos|assinaturas|ambos|dois|diferenca|comparar)\b/);
+    const plan = namedPlans.length === 1 ? namedPlans[0] : namedPlans.length > 1 || generalQuestion ? undefined :
       (barbershop.plans.filter((p) => normalize(lastAssistant).includes(normalize(p.name))).length === 1 ? priorPlan : undefined);
     parts.push(plan ? `${plan.name}: ${plan.price}${plan.period}.\n${plan.benefits.join("\n")}\n\n${plan.rules.join(" · ")}` : handleAction("planos").content);
     cta = { label: "Ver assinaturas", href: "/#planos" };
@@ -85,7 +87,7 @@ export function conversationReply(raw: string, history: ChatApiMessage[] = []): 
     parts.push(durationOnly
       ? `${service.name}: ${service.duration === "A confirmar" ? "a duração precisa ser confirmada com a equipe" : `o tempo estimado é de ${service.duration}`}.`
       : `${service.name}: ${service.price}. ${service.description}${service.duration === "A confirmar" ? "" : ` Tempo estimado: ${service.duration}.`}`);
-    quickActions = [{ id: `servico:${service.slug}`, label: `Agendar ${service.name}` }];
+    cta = handleAction(`servico:${service.slug}`).cta;
   } else if (has(text, /\b(preco|precos|valor|valores|custa|servico|servicos)\b|quanto (e|fica|cobra)/)) {
     parts.push("Você quer saber de qual serviço? Pode escrever o nome, por exemplo: corte, barba ou corte + barba.");
     quickActions = [{ id: "servico:corte", label: "Corte" }, { id: "servico:barba", label: "Barba" }, { id: "servico:corte-barba", label: "Corte + Barba" }];

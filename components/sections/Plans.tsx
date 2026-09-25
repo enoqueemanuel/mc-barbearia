@@ -34,7 +34,7 @@ export function Plans() {
                 />
               )}
               {plan.highlighted && (
-                <span className="absolute right-6 top-6 font-mono text-[10px] uppercase tracking-[0.25em] text-accent sm:right-8 sm:top-8">
+                <span className="relative mb-4 self-end font-mono text-[10px] uppercase tracking-[0.25em] text-accent">
                   Mais Escolhido
                 </span>
               )}
@@ -42,8 +42,8 @@ export function Plans() {
               <h3 className="font-display text-2xl text-ink">{plan.name}</h3>
               <p className="mt-3 text-sm text-ink-muted">{plan.description}</p>
 
-              <div className="mt-8 flex items-baseline gap-1">
-                <span className="font-display text-5xl font-semibold text-ink">{plan.price}</span>
+              <div className="mt-8 flex flex-wrap items-baseline gap-1">
+                <span className="whitespace-nowrap font-display text-4xl font-semibold text-ink sm:text-5xl">{plan.price}</span>
                 <span className="font-mono text-sm text-ink-muted">{plan.period}</span>
               </div>
 

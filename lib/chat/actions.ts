@@ -44,7 +44,7 @@ function serviceQuickActions(): QuickAction[] {
 
 function planSummary(): string {
   return barbershop.plans
-    .map((p) => `${p.name} — ${p.price}${p.period}\n${p.benefits.slice(0, 3).join(" · ")}`)
+    .map((p) => `${p.name} — ${p.price}${p.period}\n${p.benefits.join(" · ")}`)
     .join("\n\n");
 }
 

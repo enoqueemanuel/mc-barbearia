@@ -13,7 +13,7 @@ export function ChatNudge({ show, onOpen, onDismiss }: { show: boolean; onOpen: 
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 8, scale: 0.96 }}
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed bottom-[9.5rem] right-4 z-[65] w-64 rounded-2xl border border-accent/40 bg-panel p-4 pr-8 shadow-[0_20px_45px_rgba(0,0,0,0.5)] sm:bottom-24 sm:right-6"
+          className="fixed bottom-[9.5rem] right-4 z-[65] w-64 rounded-2xl border border-accent/40 bg-panel p-4 pr-8 shadow-[0_20px_45px_rgba(0,0,0,0.5)] xl:bottom-24 sm:right-6"
         >
           <button
             type="button"
