@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 export function SectionLabel({
-  index,
   children,
   className,
   light,
@@ -15,12 +14,11 @@ export function SectionLabel({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.3em]",
+        "inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.16em]",
         light ? "text-canvas/60" : "text-accent",
         className,
       )}
     >
-      {index && <span className={light ? "text-canvas/40" : "text-ink-muted"}>{index}</span>}
       {children}
     </span>
   );

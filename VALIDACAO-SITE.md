@@ -33,3 +33,14 @@
 - Não foi concluída uma reserva nem testado pagamento, login de cliente ou recebimento real de mensagens.
 - Testes responsivos feitos no navegador, não em aparelhos físicos. Teclado virtual de iPhone/Android e navegadores Safari/Firefox não foram testados diretamente.
 - Uma revisão funcional reduz atritos, mas não comprova aumento de conversão. Para medir resultados, é necessário acompanhar cliques e reservas efetivamente concluídas, com uma ferramenta de métricas configurada.
+
+## Revisao visual — setembro de 2026
+
+- Hero com fotografia real da equipe, titulo em tres linhas e acesso direto a agenda.
+- Secao do ambiente em fundo claro; fotografias originais sem sobreposicao de xicara ou fumaca.
+- Menos molduras, numeracao decorativa e brilhos; retratos alinhados a esquerda e galeria em grade.
+- Conferidos 320, 390, 768, 1024 e 1440 px sem overflow horizontal.
+- Menu movel abre e fecha ao selecionar Assinaturas; lightbox abre e fecha; ancoras locais possuem destino.
+- Links Silver/Premium continuam apontando para agendas.link/macedo; precos e condicoes preservados.
+- Autorrolagem de servicos e avaliacoes preservada; nenhuma mensagem de erro no console durante a verificacao.
+- Lint e TypeScript aprovados. Testes de largura feitos em navegador, sem teste em aparelhos fisicos.

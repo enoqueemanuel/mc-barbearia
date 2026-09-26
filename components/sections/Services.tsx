@@ -12,7 +12,7 @@ const otherServices = services.filter((service) => !service.popular);
 
 export function Services() {
   return (
-    <section id="servicos" className="bg-canvas py-24 sm:py-32 lg:py-36">
+    <section id="servicos" className="bg-canvas py-20 sm:py-28 lg:py-32">
       <Container>
         <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading

@@ -18,7 +18,7 @@ export function ServicesCarousel({ services }: { services: Service[] }) {
           {[0, 1].map((copy) => (
             <div key={copy} className="testimonials-marquee-group" aria-hidden={copy === 1 ? true : undefined}>
               {services.map((service) => (
-                <article key={service.slug} className="testimonials-marquee-card interactive-card flex flex-col rounded-2xl border border-line bg-canvas p-5 sm:p-6">
+                <article key={service.slug} className="testimonials-marquee-card interactive-card flex flex-col rounded-sm border border-line bg-canvas p-5 sm:p-6">
                   <Scissors size={18} className="text-accent" aria-hidden="true" />
                   <h4 className="mt-3 font-display text-xl text-ink">{service.name}</h4>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-muted">{service.description}</p>

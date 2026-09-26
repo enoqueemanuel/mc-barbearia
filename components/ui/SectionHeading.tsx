@@ -22,12 +22,11 @@ export function SectionHeading({
     <div className={cn("max-w-2xl", align === "center" && "mx-auto text-center", className)}>
       {eyebrow && (
         <Reveal className={cn("flex items-center gap-3", align === "center" && "justify-center")}>
-          <span className="h-px w-10 bg-accent" />
           <SectionLabel index={eyebrowIndex}>{eyebrow}</SectionLabel>
         </Reveal>
       )}
       <Reveal delay={0.1}>
-      <h2 className="text-balance mt-4 font-display text-display-lg font-semibold text-ink">
+      <h2 className="text-balance mt-4 font-display text-display-lg font-medium text-ink">
         {title}
       </h2>
       </Reveal>

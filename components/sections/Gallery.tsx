@@ -33,14 +33,14 @@ export function Gallery() {
           title="Cortes, ambiente e o dia a dia da casa."
         />
 
-        <div className="mt-10 columns-1 gap-4 sm:columns-2 lg:columns-3">
+        <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
           {galleryItems.map((item, index) => (
-            <Reveal key={item.src} delay={(index % 3) * 0.08} className="mb-4 break-inside-avoid">
+            <Reveal key={item.src} delay={(index % 3) * 0.08}>
               <button
                 type="button"
                 onClick={() => openAt(index)}
-                className="group relative block w-full overflow-hidden rounded-2xl bg-panel focus-visible:outline-2 focus-visible:outline-accent"
-                style={{ aspectRatio: `${item.width} / ${item.height}` }}
+                className="group relative block w-full overflow-hidden bg-panel focus-visible:outline-2 focus-visible:outline-accent"
+                style={{ aspectRatio: "4 / 5" }}
                 aria-label={`Ampliar foto: ${item.alt}`}
               >
                 <Image

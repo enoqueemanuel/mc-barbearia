@@ -23,19 +23,13 @@ export function Plans() {
             <Reveal
               key={plan.slug}
               className={cn(
-                "relative flex flex-col overflow-hidden rounded-2xl border p-6 transition-transform duration-500 ease-premium hover:-translate-y-1.5 sm:p-10",
+                "relative flex flex-col overflow-hidden rounded-sm border p-6 sm:p-10",
                 plan.highlighted ? "border-accent bg-canvas" : "border-line-strong bg-canvas/40",
               )}
             >
               {plan.highlighted && (
-                <div
-                  aria-hidden="true"
-                  className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-accent/10 blur-3xl"
-                />
-              )}
-              {plan.highlighted && (
                 <span className="relative mb-4 self-end font-mono text-[10px] uppercase tracking-[0.25em] text-accent">
-                  Mais Escolhido
+                  Corte + barba
                 </span>
               )}
 

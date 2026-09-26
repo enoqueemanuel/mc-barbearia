@@ -12,7 +12,7 @@ export function Testimonials() {
       <Container>
         <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
           <SectionHeading eyebrow="Avaliações" eyebrowIndex="07" title="O que dizem sobre a MC." />
-          <Reveal className="shrink-0 rounded-2xl border border-line-strong p-6 text-center sm:p-8 lg:w-72">
+          <Reveal className="shrink-0 border-l border-line-strong pl-5 lg:max-w-64">
             <p className="text-sm text-ink-muted">
               Confira mais avaliações dos nossos clientes no Google.
             </p>

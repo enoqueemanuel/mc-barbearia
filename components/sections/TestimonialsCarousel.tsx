@@ -19,7 +19,7 @@ export function TestimonialsCarousel({ cards }: { cards: Testimonial[] }) {
           {[0, 1].map((copy) => (
             <div key={copy} className="testimonials-marquee-group" aria-hidden={copy === 1 ? true : undefined} inert={copy === 1 ? true : undefined}>
               {cards.map((testimonial) => (
-                <article key={testimonial.name} className="testimonials-marquee-card flex flex-col rounded-2xl border border-line bg-canvas p-5 sm:p-6">
+                <article key={testimonial.name} className="testimonials-marquee-card flex flex-col rounded-sm border border-line bg-panel p-5 sm:p-6">
                   <div className="flex items-center justify-between gap-4">
                   <div className="flex gap-1.5 text-accent" aria-hidden="true">
                     {Array.from({ length: 5 }, (_, i) => (

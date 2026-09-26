@@ -11,8 +11,8 @@ import { photoTreatment, photoVignetteSoft } from "@/lib/styles";
 
 function TeamCard({ member, delay }: { member: TeamMember; delay: number }) {
   return (
-    <div className="flex flex-col items-center text-center">
-      <Reveal delay={delay} className="relative aspect-[4/5] w-full max-w-xs overflow-hidden rounded-2xl">
+    <div className="flex flex-col items-start text-left">
+      <Reveal delay={delay} className="relative aspect-[4/5] w-full overflow-hidden">
         <Image
           src={member.image}
           alt={member.imageAlt}
@@ -24,12 +24,12 @@ function TeamCard({ member, delay }: { member: TeamMember; delay: number }) {
         <div className={photoVignetteSoft} />
       </Reveal>
 
-      <Reveal delay={delay + 0.15} className="mt-2">
+      <Reveal delay={delay + 0.15} className="mt-5">
         <h3 className="font-display text-display-md text-ink">{member.name}</h3>
         <p className="mt-1 font-mono text-xs uppercase tracking-[0.2em] text-accent">{member.role}</p>
         <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-ink-muted">{member.bio}</p>
 
-        <div className="mt-5 flex items-center justify-center gap-4">
+        <div className="mt-5 flex items-center justify-start gap-4">
           <Button
             href={bookingHref()}
             external
@@ -62,8 +62,8 @@ export function Team() {
           eyebrow="Equipe MC"
           eyebrowIndex="04"
           title="Conheça quem cuida do seu estilo."
-          align="center"
-          className="mx-auto"
+          align="left"
+          className=""
         />
 
         <div className="mt-12 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">

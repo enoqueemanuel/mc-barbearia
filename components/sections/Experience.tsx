@@ -1,73 +1,25 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
-import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Container } from "@/components/ui/Container";
-import { photoTreatment, photoVignetteSoft, photoVignetteStrong } from "@/lib/styles";
 
 export function Experience() {
   return (
-    <section id="experiencia" className="relative overflow-hidden bg-canvas py-20 sm:py-28 lg:py-32">
-      <Container className="relative">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
-          <div className="relative lg:col-span-5">
-            <Reveal className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
-              <Image
-                src="/images/gallery/ambiente-quadros.jpg"
-                alt="Quadros do ambiente da MC Barbearia: foco, disciplina e execução"
-                fill
-                quality={90}
-                sizes="(min-width: 1024px) 40vw, 100vw"
-                className={`object-cover ${photoTreatment}`}
-              />
-              <div className={photoVignetteStrong} />
-            </Reveal>
-
-            <Reveal
-              delay={0.15}
-              className="absolute -bottom-8 -right-8 hidden aspect-[5/4] w-1/2 overflow-hidden rounded-2xl border-4 border-canvas lg:block"
-            >
-              <div className="relative h-full w-full">
-                <Image
-                  src="/images/gallery/detalhes-ferramentas.jpg"
-                  alt="Tesouras e pente profissionais de barbeiro"
-                  fill
-                  quality={90}
-                  sizes="25vw"
-                  className={`object-cover ${photoTreatment}`}
-                />
-                <div className={photoVignetteSoft} />
-              </div>
-            </Reveal>
-          </div>
-
-          <div className="flex flex-col justify-center lg:col-span-6 lg:col-start-7">
-            <Reveal className="flex items-center gap-3">
-              <span className="h-px w-10 bg-accent" />
-              <SectionLabel index="02">Experiência MC</SectionLabel>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <h2 className="text-balance mt-4 font-display text-display-lg font-semibold text-ink">
-                Não é só um corte.
-              </h2>
-            </Reveal>
-            <Reveal delay={0.2}>
-              <p className="mt-6 max-w-lg text-lg leading-relaxed text-ink-muted">
-                Café quentinho, ambiente pensado em cada detalhe e barbeiros que
-                tratam sua imagem como ela já é: uma assinatura.
-              </p>
-            </Reveal>
-            <Reveal delay={0.25} className="mt-8 max-w-lg">
-              <div className="relative aspect-[16/7] overflow-hidden rounded-2xl border border-line">
-                <Image
-                  src="/images/gallery/ambiente-cafe.jpg"
-                  alt="Cantinho do café com cafeteira e garrafas térmicas da MC Barbearia"
-                  fill
-                  sizes="(min-width: 1024px) 40vw, 100vw"
-                  className={`object-cover ${photoTreatment}`}
-                />
-              </div>
-            </Reveal>
-          </div>
+    <section id="experiencia" className="bg-[#e9e5db] py-16 text-[#24251f] sm:py-24">
+      <Container>
+        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+          <Reveal>
+            <p className="text-xs uppercase tracking-[0.18em] text-[#626258]">A casa</p>
+            <h2 className="mt-5 font-display text-display-lg font-medium">O corte importa.<br /><span className="italic">A conversa também.</span></h2>
+            <p className="mt-6 max-w-md leading-relaxed text-[#626258]">Café quentinho, ambiente pensado em cada detalhe e barbeiros que tratam sua imagem como ela já é: uma assinatura.</p>
+            <p className="mt-5 max-w-md leading-relaxed text-[#626258]">Da escolha do corte ao acabamento, o cuidado acontece de perto.</p>
+            <a href="#equipe" className="mt-8 inline-block border-b border-[#24251f]/40 pb-2 text-sm font-medium">Conheça quem vai cuidar de você ↗</a>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className="grid grid-cols-[1.25fr_1fr] items-end gap-3 sm:gap-5">
+              <div className="relative aspect-[3/4] overflow-hidden"><Image src="/images/gallery/ambiente-quadros.jpg" alt="Detalhes do ambiente da Macedo Barbearia" fill sizes="(min-width: 1024px) 30vw, 55vw" className="object-cover" /></div>
+              <figure><div className="relative aspect-[3/4] overflow-hidden"><Image src="/images/gallery/ambiente-cafe.jpg" alt="O café da casa, na estação de café da barbearia" fill sizes="(min-width: 1024px) 25vw, 40vw" className="object-cover object-[65%_center]" /></div><figcaption className="mt-3 text-xs italic text-[#626258]">O café faz parte.</figcaption></figure>
+            </div>
+          </Reveal>
         </div>
       </Container>
     </section>
