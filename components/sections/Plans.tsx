@@ -3,7 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
-import { whatsappHref } from "@/lib/whatsapp";
+import { bookingHref } from "@/lib/booking";
 import { cn } from "@/lib/utils";
 
 export function Plans() {
@@ -57,7 +57,7 @@ export function Plans() {
               </ul>
 
               <Button
-                href={whatsappHref(`Olá! Quero saber mais sobre o ${plan.name}.`)}
+                href={bookingHref()}
                 external
                 variant={plan.highlighted ? "primary" : "ghost"}
                 size="lg"
