@@ -1,24 +1,16 @@
-﻿import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { siteConfig } from "@/data/site";
 import { bookingHref } from "@/lib/booking";
 import { BrandWatermark } from "@/components/ui/BrandWatermark";
+import { LiquidEffectAnimation } from "@/components/ui/liquid-effect-animation";
 
 export function Hero() {
   return (
     <section id="inicio" className="relative isolate min-h-[100svh] overflow-hidden bg-canvas pt-32 sm:pt-40">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
-        <Image
-          src="/images/gallery/equipe-dupla.jpg"
-          alt=""
-          fill
-          priority
-          quality={90}
-          sizes="100vw"
-          className="object-cover object-[60%_25%] opacity-40 sm:object-[center_30%]"
-        />
+        <LiquidEffectAnimation imageSrc="/images/gallery/equipe-dupla.jpg" className="opacity-40" />
         <div className="absolute inset-0 bg-gradient-to-r from-canvas/65 via-canvas/25 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-canvas via-transparent to-canvas/20" />
       </div>
